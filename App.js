@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import type {Node} from 'react';
 import {
   View, 
@@ -17,10 +17,13 @@ import {
 } from 'react-native';
 
 const App: () => Node = () => {
+  //const [name, setName] = useState('Bipo')
+  const [person, setPerson] = useState({name: 'Bipo', nationality: 'French'})
+
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>Hello World</Text>
-      <Button title='Youtube' onPress={()=>{Linking.openURL('https://youtube.com')}}></Button>
+      <Text style={styles.text}>I'm a {person.name} and I'm {person.nationality}!</Text>
+      <Button title='Change Name' onPress={()=>{person.name==='Bipo'?setPerson({name: 'Bupo', nationality: 'american'}):setPerson({name: 'Bipo'})}}></Button>
     </View>
   );
 };
