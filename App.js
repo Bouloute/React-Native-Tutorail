@@ -19,11 +19,11 @@ import {
 const App: () => Node = () => {
   //const [name, setName] = useState('Bipo')
   const [person, setPerson] = useState({name: 'Bipo', nationality: 'French'})
-
+  const [counter, setCounter] = useState(0)
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>I'm a {person.name} and I'm {person.nationality}!</Text>
-      <Button title='Change Name' onPress={()=>{person.name==='Bipo'?setPerson({name: 'Bupo', nationality: 'american'}):setPerson({name: 'Bipo'})}}></Button>
+      <Text style={styles.text}>I have been clicked on {counter} times!</Text>
+      <Button title='Change Name' onPress={()=>{ setCounter(counter + 1)}}></Button>
     </View>
   );
 };
